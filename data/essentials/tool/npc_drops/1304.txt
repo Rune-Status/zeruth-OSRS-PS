@@ -1,0 +1,7 @@
+Pot - 5
+Jug - 2
+Tinderbox - 2
+Chisel - 2
+Hammer - 5
+Bronze pickaxe - 5
+Bronze axe - 10

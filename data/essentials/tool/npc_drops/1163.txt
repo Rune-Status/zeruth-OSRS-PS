@@ -1,0 +1,2 @@
+table=main
+rare_dt_slot - 1 - Rare

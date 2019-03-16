@@ -1,0 +1,11 @@
+Rope - 50
+Lockpick - 25
+Chisel - 20
+Knife - 20
+Stethoscope - 25
+Bronze knife - 15
+Iron knife - 10
+Steel knife - 5
+Bronze claws - 3
+Iron claws - 2
+Steel claws - 1

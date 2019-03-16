@@ -1,0 +1,104 @@
+package plugin.dialogue;
+
+import org.arcanium.game.content.dialogue.DialoguePlugin;
+import org.arcanium.game.content.dialogue.FacialExpression;
+import org.arcanium.game.node.entity.npc.NPC;
+import org.arcanium.game.node.entity.player.Player;
+
+/**
+ * Represents the dialogue plugin used for the hans npc.
+ * @author 'Vexia
+ * @version 1.0
+ */
+public final class ManDialoguePlugin extends DialoguePlugin {
+
+	/**
+	 * Constructs a new {@code HansDialoguePlugin} {@code Object}.
+	 */
+	public ManDialoguePlugin() {
+		/**
+		 * empty.
+		 */
+	}
+
+	/**
+	 * Constructs a new {@code HansDialoguePlugin} {@code Object}.
+	 *
+	 * @param player the player.
+	 */
+	public ManDialoguePlugin(Player player) {
+		super(player);
+	}
+
+	@Override
+	public DialoguePlugin newInstance(Player player) {
+		return new ManDialoguePlugin(player);
+	}
+
+	@Override
+	public boolean open(Object... args) {
+		npc = (NPC) args[3080];
+		System.out.println("Attempting to send dialogue....");
+		interpreter.sendDialogues(npc, FacialExpression.NORMAL, "Hello. What are you doing here?");
+		stage = 0;
+		return true;
+	}
+
+	@Override
+	public boolean handle(int interfaceId, int buttonId) {
+
+		switch (stage) {
+			case 0:
+				interpreter.sendOptions("Select an Option", "I'm looking for whoever is in charge of this place.", "I have come to kill everyone in this castle!", "I don't know. I'm lost. Where am I?", "Have you been here as long as me?");
+				stage = 1;
+				break;
+			case 1:
+
+				switch (buttonId) {
+					case 1:
+						interpreter.sendDialogues(npc, FacialExpression.NORMAL, "Who, the Duke? He's in his study, on the first floor.");
+						stage = 10;
+						break;
+					case 2:
+						end();
+						npc.moveStep();
+						npc.sendChat("Help Help!");
+						break;
+					case 3:
+						interpreter.sendDialogues(npc, FacialExpression.NORMAL, "You are in Lumbridge Castle.");
+						stage = 30;
+						break;
+					case 4:
+						interpreter.sendDialogues(npc, FacialExpression.NORMAL, "I've been patrolling this castle for years!");
+						stage = 40;
+						break;
+				}
+
+				break;
+			case 40:
+				interpreter.sendDialogues(player, FacialExpression.NORMAL, "You must be old then?");
+				stage = 41;
+				break;
+			case 41:
+				interpreter.sendDialogues(npc, FacialExpression.NORMAL, "Haha, you could say I'm quite the veteran of these lands.", "Yes, I've been here a fair while...");
+				stage = 42;
+				break;
+			case 42:
+				end();
+				break;
+			case 10:
+				end();
+				break;
+			case 30:
+				end();
+				break;
+		}
+
+		return true;
+	}
+
+	@Override
+	public int[] getIds() {
+		return new int[]{3080};
+	}
+}
