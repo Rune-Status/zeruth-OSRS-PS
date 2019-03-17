@@ -32,4 +32,5 @@ hs_err_pid*
 # JRebel
 rebel.xml
 
-*/target/**
+**/target/**
+data/players/

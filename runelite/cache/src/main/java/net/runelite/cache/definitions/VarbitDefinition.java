@@ -33,4 +33,20 @@ public class VarbitDefinition
 	private int index;
 	private int leastSignificantBit;
 	private int mostSignificantBit;
+
+	public void setId(int i) {
+		id = i;
+	}
+
+	public void setIndex(int i) {
+		index = i;
+	}
+
+	public void setLeastSignificantBit(int i) {
+		index = i;
+	}
+
+	public void setMostSignificantBit(int i) {
+		index = i;
+	}
 }
