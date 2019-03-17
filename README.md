@@ -44,6 +44,7 @@ pass: xojaiyfa
   First of all thanks to everyone who believes in open source. It's the way to be,
   
     Vashmeed - Released the original source which this is based off of. Incredible work.
+    Adam & the RuneLite team - They really make the world a better place.
     Polar - Could not have done it without all his help. Really great guy and I'm lucky to be able to have him as a resource.
     Kris - Great guy. Incredibly knowledgable and willing to help a ton if you can show you're willing to learn.
     Inferno Team
