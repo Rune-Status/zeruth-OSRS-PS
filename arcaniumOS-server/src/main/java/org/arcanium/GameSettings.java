@@ -90,7 +90,7 @@ public final class GameSettings {
      * @return The game settings.
      */
     public static GameSettings parse(String[] args) {
-        String name = "Inferno";
+        String name = "OSRS-PS";
         boolean beta = false;
         boolean devMode = true;
         boolean gui = true;
@@ -235,7 +235,7 @@ public final class GameSettings {
                     return "";
                 }
             }
-            SystemLogger.log("Arcanium is running in SPAWN mode!");
+            SystemLogger.log("OSRS-PS is running in SPAWN mode!");
         }
         return "GameSettings [name=" + name + ", beta=" + beta + ", devMode=" + devMode + ", gui=" + gui + ", type=" + type + ", worldId=" + worldId + "]";
     }

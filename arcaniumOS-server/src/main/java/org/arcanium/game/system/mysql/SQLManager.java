@@ -4,6 +4,7 @@ import org.arcanium.game.system.SystemLogger;
 import org.arcanium.game.system.SystemManager;
 import org.arcanium.game.system.mysql.impl.*;
 
+import javax.net.ssl.SSLException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,7 +14,7 @@ public final class SQLManager {
     /**
      * The database URL.
      */
-    public static final String DATABASE_URL = "localhost:3306/world1";
+    public static final String DATABASE_URL = "localhost:3306/world1?useSSL=false";
 
     /**
      * The username of the user.
@@ -75,7 +76,7 @@ public final class SQLManager {
         try {
             new ShopSQLHandler().parse();
             new NPCDropSQLHandler().parse();
-            //new NPCSpawnSQLHandler().parse();
+            new NPCSpawnSQLHandler().parse();
             new DoorConfigSQLHandler().parse();
             new GroundSpawnSQLHandler().parse();
             //new MusicConfigSQLHandler().parse();
@@ -104,11 +105,14 @@ public final class SQLManager {
      *
      * @param connection The connection.
      */
-    public static void close(Connection connection) {
+    public static void close(Connection connection){
         try {
             connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            /*
+            TODO: Fix this
+             */
+            //e.printStackTrace();
         }
     }
 

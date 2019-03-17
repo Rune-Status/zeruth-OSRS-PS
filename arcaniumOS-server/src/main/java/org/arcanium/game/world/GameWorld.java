@@ -166,8 +166,6 @@ public final class GameWorld {
         SQLManager.prePlugin();
         ParserSequence.prepare();
         ParserSequence.parse();
-        val npcNodeLoader = new NpcNodeLoader();
-        npcNodeLoader.load();
         val npcDefinitionLoader = new NPCDefinitionLoader();
         npcDefinitionLoader.load();
         val itemDefinitionLoader = new ItemDefinitionLoader();
