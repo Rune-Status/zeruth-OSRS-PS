@@ -73,13 +73,13 @@ public final class SQLManager {
      */
     public static void postPlugin() {
         try {
-//            new ShopSQLHandler().parse();
-          //  new NPCDropSQLHandler().parse();
-          //  new NPCSpawnSQLHandler().parse();
-           // new DoorConfigSQLHandler().parse();
-        //    new GroundSpawnSQLHandler().parse();
+            new ShopSQLHandler().parse();
+            new NPCDropSQLHandler().parse();
+            //new NPCSpawnSQLHandler().parse();
+            new DoorConfigSQLHandler().parse();
+            new GroundSpawnSQLHandler().parse();
             //new MusicConfigSQLHandler().parse();
-        //    new RangeConfigSQLHandler().parse();
+            new RangeConfigSQLHandler().parse();
         } catch (Exception e) {
             e.printStackTrace();
         }
